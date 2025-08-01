@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECO IT Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            color: #d4af37;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            display: flex;
+            width: 500%;
+            height: 100%;
+            transition: transform 1s ease-in-out;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px 40px;
+            border-radius: 10px;
+        }
+        .carousel-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .carousel-text button {
+            margin-top: 10px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: white;
+            background-color: #d4af37;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .carousel-text button:hover {
+            background-color: #b8912f;
+        }
+        .dots {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dot.active {
+            background-color: #d4af37;
+        }
+        section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+        #services h2, #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .services-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .service {
+            width: 30%;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .service h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 10px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        form button:hover {
+            background: #b8912f;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ECO IT Solutions</h1>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+            <img src="https://source.unsplash.com/1920x1080/?technology,servers" alt="IT Infrastructure">
+            <img src="https://source.unsplash.com/1920x1080/?cybersecurity,network" alt="Cybersecurity">
+            <img src="https://source.unsplash.com/1920x1080/?cloud,computing" alt="Cloud Solutions">
+            <img src="https://source.unsplash.com/1920x1080/?helpdesk,it" alt="IT Support">
+            <img src="https://source.unsplash.com/1920x1080/?data,center" alt="Data Management">
+        </div>
+        <div class="carousel-text">
+            <h1>Reliable IT Support for Your Business</h1>
+            <p>Professional Desktop Support & IT Solutions in London</p>
+            <button onclick="document.getElementById('contact').scrollIntoView()">Contact Us</button>
+        </div>
+        <div class="dots" id="dots"></div>
+    </div>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service">
+                <h3>IT Support</h3>
+                <p>24/7 helpdesk support, troubleshooting, and maintenance for all your IT needs.</p>
+            </div>
+            <div class="service">
+                <h3>Cloud Solutions</h3>
+                <p>Seamless migration and management of cloud platforms like Microsoft 365 and AWS.</p>
+            </div>
+            <div class="service">
+                <h3>Cybersecurity</h3>
+                <p>Robust protection including threat monitoring, firewalls, and data security policies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 ECO IT Solutions. All Rights Reserved.
+    </footer>
+
+    <script>
+        const slide = document.getElementById('carousel-slide');
+        const dotsContainer = document.getElementById('dots');
+        const totalSlides = slide.children.length;
+        let index = 0;
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => moveToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+        const dots = document.querySelectorAll('.dot');
+
+        function moveToSlide(i) {
+            index = i;
+            slide.style.transform = `translateX(${-index * 100}%)`;
+            updateDots();
+        }
+
+        function updateDots() {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        // Auto-slide
+        setInterval(() => {
+            index = (index + 1) % totalSlides;
+            moveToSlide(index);
+        }, 5000);
+    </script>
+</body>
+</html>
